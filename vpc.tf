@@ -54,3 +54,12 @@ resource "aws_route_table_association" "public_subnet_asso" {
   subnet_id      = element(aws_subnet.public_subnets[*].id, count.index)
   route_table_id = aws_route_table.second_rt.id
 }
+
+resource "aws_db_subnet_group" "my_db_subnet_group" {
+  name       = "my-db-subnet-group"
+  subnet_ids = [aws_subnet.private_subnets[0].id, aws_subnet.private_subnets[1].id] // mandatory to cover at least 2 AZ
+
+  tags = {
+    Name = "My DB Subnet Group"
+  }
+}
