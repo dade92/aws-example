@@ -28,6 +28,11 @@ output "db_name" {
   value       = aws_db_instance.default.db_name
 }
 
+output "internet_gateway_id" {
+  description = "internet gateway id"
+  value       = aws_internet_gateway.gw.id
+}
+
 output "db_arn" {
   description = "db arn"
   value       = aws_db_instance.default.arn
