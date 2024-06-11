@@ -13,6 +13,16 @@ output "instance_ip" {
   value       = aws_instance.example_server.public_ip
 }
 
+output "load_balancer_arn" {
+  description = "Load balancer arn"
+  value       = aws_lb.my_alb.arn
+}
+
+output "load_balancer_dns_name" {
+  description = "Load balancer dns name"
+  value       = aws_lb.my_alb.dns_name
+}
+
 output "db_name" {
   description = "db name"
   value       = aws_db_instance.default.db_name
