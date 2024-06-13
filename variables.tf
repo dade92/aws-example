@@ -27,5 +27,6 @@ variable "user_data" {
     sudo service docker start
     sudo usermod -a -G docker ec2-user
     aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 166222693886.dkr.ecr.eu-central-1.amazonaws.com
+    docker run -p 80:3000 -d 166222693886.dkr.ecr.eu-central-1.amazonaws.com/node-example:latest
   EOF
 }
