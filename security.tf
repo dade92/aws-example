@@ -1,5 +1,5 @@
 resource "aws_security_group" "security_fe" {
-  name = "allow-all"
+  name = "fe-security-group"
 
   vpc_id = aws_vpc.main.id
 
@@ -30,7 +30,7 @@ resource "aws_security_group" "security_fe" {
 }
 
 resource "aws_security_group" "security_be" {
-  name = "allow-all"
+  name = "be-security-group"
 
   vpc_id = aws_vpc.main.id
 

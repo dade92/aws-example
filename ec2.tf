@@ -10,7 +10,7 @@ resource "aws_instance" "server_BE" {
   user_data = var.user_data_BE
 
   tags = {
-    Name = "ec2-1"
+    Name = "ec2-BE"
   }
 }
 
@@ -26,6 +26,6 @@ resource "aws_instance" "server_FE" {
   user_data = var.user_data_FE
 
   tags = {
-    Name = "ec2-2"
+    Name = "ec2-FE"
   }
 }
