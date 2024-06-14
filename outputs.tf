@@ -33,23 +33,13 @@ output "security_group_arn" {
   value       = aws_security_group.security.arn
 }
 
-output "db_name" {
-  description = "db name"
-  value       = aws_db_instance.default.db_name
-}
+# output "db_name" {
+#   description = "db name"
+#   value       = aws_db_instance.default.db_name
+# }
 
-output "db_arn" {
-  description = "db arn"
-  value       = aws_db_instance.default.arn
-}
-
-output "db_address" {
-  description = "db address"
-  value       = aws_db_instance.default.address
-}
-
-output "db_endpoint" {
-  description = "db endpoint"
-  value       = aws_db_instance.default.endpoint
-}
+# output "db_endpoint" {
+#   description = "db endpoint"
+#   value       = aws_db_instance.default.endpoint
+# }
 
