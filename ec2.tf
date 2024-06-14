@@ -1,4 +1,4 @@
-resource "aws_instance" "example_server" {
+resource "aws_instance" "server_BE" {
   ami                         = "ami-09e647bf7a368e505"
   instance_type               = "t2.micro"
   subnet_id                   = aws_subnet.public_subnets[0].id
@@ -7,9 +7,25 @@ resource "aws_instance" "example_server" {
   key_name                    = "example-1"
   iam_instance_profile        = aws_iam_instance_profile.ec2_profile.name
 
-  user_data = var.user_data
+  user_data = var.user_data_BE
 
   tags = {
-    Name = "ec2-vpc-example"
+    Name = "ec2-1"
+  }
+}
+
+resource "aws_instance" "server_FE" {
+  ami                         = "ami-09e647bf7a368e505"
+  instance_type               = "t2.micro"
+  subnet_id                   = aws_subnet.public_subnets[1].id
+  associate_public_ip_address = true
+  security_groups             = [aws_security_group.security.id]
+  key_name                    = "example-1"
+  iam_instance_profile        = aws_iam_instance_profile.ec2_profile.name
+
+  user_data = var.user_data_FE
+
+  tags = {
+    Name = "ec2-2"
   }
 }

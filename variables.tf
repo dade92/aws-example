@@ -30,3 +30,33 @@ variable "user_data" {
     docker run -p 80:3000 -d 166222693886.dkr.ecr.eu-central-1.amazonaws.com/node-example:latest
   EOF
 }
+
+variable "user_data_BE" {
+  type        = string
+  description = "Initialization script"
+  default     = <<-EOF
+    #!/bin/bash
+    set -ex
+    sudo yum update -y
+    sudo yum install docker -y
+    sudo service docker start
+    sudo usermod -a -G docker ec2-user
+    aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 166222693886.dkr.ecr.eu-central-1.amazonaws.com
+    docker run -p 8080:8080 -d 166222693886.dkr.ecr.eu-central-1.amazonaws.com/spring-example2:latest
+  EOF
+}
+
+variable "user_data_FE" {
+  type        = string
+  description = "Initialization script"
+  default     = <<-EOF
+    #!/bin/bash
+    set -ex
+    sudo yum update -y
+    sudo yum install docker -y
+    sudo service docker start
+    sudo usermod -a -G docker ec2-user
+    aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 166222693886.dkr.ecr.eu-central-1.amazonaws.com
+    docker run -p 80:80 -d 166222693886.dkr.ecr.eu-central-1.amazonaws.com/react-example2:latest
+  EOF
+}

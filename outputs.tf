@@ -1,16 +1,31 @@
 output "instance_id" {
   description = "ID of the EC2 instance"
-  value       = aws_instance.example_server.id
+  value       = aws_instance.server_BE.id
 }
 
 output "instance_arn" {
   description = "arn of the EC2 instance"
-  value       = aws_instance.example_server.arn
+  value       = aws_instance.server_BE.arn
 }
 
 output "instance_ip" {
   description = "Public IP address of the EC2 instance"
-  value       = aws_instance.example_server.public_ip
+  value       = aws_instance.server_BE.public_ip
+}
+
+output "fe_instance_id" {
+  description = "ID of the EC2 instance"
+  value       = aws_instance.server_FE.id
+}
+
+output "fe_instance_arn" {
+  description = "arn of the EC2 instance"
+  value       = aws_instance.server_FE.arn
+}
+
+output "fe_instance_ip" {
+  description = "Public IP address of the EC2 instance"
+  value       = aws_instance.server_FE.public_ip
 }
 
 output "load_balancer_arn" {
