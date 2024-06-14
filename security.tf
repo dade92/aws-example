@@ -1,4 +1,4 @@
-resource "aws_security_group" "security" {
+resource "aws_security_group" "security_fe" {
   name = "allow-all"
 
   vpc_id = aws_vpc.main.id
@@ -18,6 +18,28 @@ resource "aws_security_group" "security" {
     ]
     from_port = 80
     to_port   = 80
+    protocol  = "tcp"
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = -1
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+resource "aws_security_group" "security_be" {
+  name = "allow-all"
+
+  vpc_id = aws_vpc.main.id
+
+  ingress {
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
+    from_port = 22
+    to_port   = 22
     protocol  = "tcp"
   }
 

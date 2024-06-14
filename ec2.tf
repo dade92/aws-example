@@ -3,7 +3,7 @@ resource "aws_instance" "server_BE" {
   instance_type               = "t2.micro"
   subnet_id                   = aws_subnet.public_subnets[0].id
   associate_public_ip_address = true
-  security_groups             = [aws_security_group.security.id]
+  security_groups             = [aws_security_group.security_be.id]
   key_name                    = "example-1"
   iam_instance_profile        = aws_iam_instance_profile.ec2_profile.name
 
@@ -19,7 +19,7 @@ resource "aws_instance" "server_FE" {
   instance_type               = "t2.micro"
   subnet_id                   = aws_subnet.public_subnets[1].id
   associate_public_ip_address = true
-  security_groups             = [aws_security_group.security.id]
+  security_groups             = [aws_security_group.security_fe.id]
   key_name                    = "example-1"
   iam_instance_profile        = aws_iam_instance_profile.ec2_profile.name
 

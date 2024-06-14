@@ -43,9 +43,14 @@ output "internet_gateway_id" {
   value       = aws_internet_gateway.gw.id
 }
 
-output "security_group_arn" {
-  description = "security group arn"
-  value       = aws_security_group.security.arn
+output "security_group_fe_arn" {
+  description = "fe security group arn"
+  value       = aws_security_group.security_fe.arn
+}
+
+output "security_group_be_arn" {
+  description = "be security group arn"
+  value       = aws_security_group.security_be.arn
 }
 
 # output "db_name" {
