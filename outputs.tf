@@ -28,6 +28,11 @@ output "internet_gateway_id" {
   value       = aws_internet_gateway.gw.id
 }
 
+output "security_group_arn" {
+  description = "security group arn"
+  value       = aws_security_group.security.arn
+}
+
 output "db_name" {
   description = "db name"
   value       = aws_db_instance.default.db_name
@@ -47,3 +52,4 @@ output "db_endpoint" {
   description = "db endpoint"
   value       = aws_db_instance.default.endpoint
 }
+
