@@ -1,7 +1,7 @@
-#If you want to deploy single app, just use the fe_tg
+#If you want to deploy single app, just use the fe_tg and remove/comment the tg_attachment_be
 
 resource "aws_lb" "my_alb" {
-  name               = "http_load_balancer"
+  name               = "app-load-balancer"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.security_fe.id, aws_security_group.security_be.id]

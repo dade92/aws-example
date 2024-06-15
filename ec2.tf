@@ -26,7 +26,7 @@ resource "aws_instance" "server_FE" {
   key_name                    = "example-1"
   iam_instance_profile        = aws_iam_instance_profile.ec2_profile.name
 
-  user_data = var.user_data_FE
+  user_data = var.user_data_single_app
 
   tags = {
     Name = "ec2-FE"

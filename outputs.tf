@@ -1,3 +1,5 @@
+#If you want a single app, remember to comment/remove the related outputs
+
 output "instance_id" {
   description = "ID of the EC2 instance"
   value       = aws_instance.server_BE.id
