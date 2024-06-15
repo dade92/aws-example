@@ -17,6 +17,11 @@ resource "aws_lb_target_group" "be_tg" {
   port     = 8080
   protocol = "HTTP"
   vpc_id   = aws_vpc.main.id
+
+  health_check {
+    port = 8080
+    path = "/api/translations/en"
+  }
 }
 
 resource "aws_lb_target_group" "fe_tg" {
