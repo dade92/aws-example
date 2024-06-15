@@ -1,3 +1,5 @@
+#If you want to deploy a single app, just use the security_fe security group
+
 resource "aws_security_group" "security_fe" {
   name = "fe-security-group"
 

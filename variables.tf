@@ -16,7 +16,7 @@ variable "azs" {
   default     = ["eu-central-1a", "eu-central-1b"]
 }
 
-variable "user_data" {
+variable "user_data_single_app" {
   type        = string
   description = "Initialization script"
   default     = <<-EOF
