@@ -27,7 +27,7 @@ variable "user_data_single_app" {
     sudo service docker start
     sudo usermod -a -G docker ec2-user
     aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 166222693886.dkr.ecr.eu-central-1.amazonaws.com
-    docker run -p 80:3000 -d 166222693886.dkr.ecr.eu-central-1.amazonaws.com/node-example:latest
+    docker run -p 80:3000 -d public.ecr.aws/j9p4t0r0/node-example:latest
   EOF
 }
 
@@ -42,7 +42,7 @@ variable "user_data_BE" {
     sudo service docker start
     sudo usermod -a -G docker ec2-user
     aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 166222693886.dkr.ecr.eu-central-1.amazonaws.com
-    docker run -p 8080:8080 -d 166222693886.dkr.ecr.eu-central-1.amazonaws.com/spring-example2:latest
+    docker run -p 8080:8080 -d public.ecr.aws/j9p4t0r0/spring-example2:latest
   EOF
 }
 
