@@ -35,15 +35,30 @@ resource "aws_iam_role_policy" "ec2_policy" {
   "Version": "2012-10-17",
   "Statement": [
     {
+      "Effect": "Allow",
       "Action": [
         "ecr:GetAuthorizationToken",
         "ecr:BatchGetImage",
         "ecr:GetDownloadUrlForLayer"
       ],
-      "Effect": "Allow",
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:PutObjectAcl",
+        "s3:GetObject",
+        "s3:GetObjectAcl",
+        "s3:DeleteObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::s3-bucket-example-1234599"
+      ]
     }
   ]
 }
 EOF
 }
+
+data "aws_caller_identity" "current" {}

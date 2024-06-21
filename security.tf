@@ -1,7 +1,7 @@
 #If you want to deploy a single app, just use the security_fe security group. You can maintain the security_be
 
 resource "aws_security_group" "security_fe" {
-  name = "fe-security-group"
+  name        = "fe-security-group"
   description = "allow access for FE apps on port 80"
 
   vpc_id = aws_vpc.main.id
@@ -33,7 +33,7 @@ resource "aws_security_group" "security_fe" {
 }
 
 resource "aws_security_group" "security_be" {
-  name = "be-security-group"
+  name        = "be-security-group"
   description = "allow access for BE apps on port 8080"
 
   vpc_id = aws_vpc.main.id
@@ -67,7 +67,7 @@ resource "aws_security_group" "security_be" {
 resource "aws_security_group" "rds_sg" {
   name_prefix = "rds-"
   description = "allow access for RDBMS on port 3306"
-  vpc_id = aws_vpc.main.id
+  vpc_id      = aws_vpc.main.id
 
   # Add any additional ingress/egress rules as needed
   ingress {
