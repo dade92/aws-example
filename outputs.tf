@@ -55,6 +55,11 @@ output "security_group_be_arn" {
   value       = aws_security_group.security_be.arn
 }
 
+output "s3_bucket_arn" {
+  description = "s3 arn"
+  value       = aws_s3_bucket.s3-bucket.arn
+}
+
 # output "db_name" {
 #   description = "db name"
 #   value       = aws_db_instance.default.db_name
