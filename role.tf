@@ -50,8 +50,7 @@ resource "aws_iam_role_policy" "ec2_policy" {
         "s3:PutObjectAcl",
         "s3:GetObject",
         "s3:GetObjectAcl",
-        "s3:DeleteObject",
-        "s3:ListBucket",
+        "s3:DeleteObject"
       ],
       "Resource": [
         "arn:aws:s3:::*"
