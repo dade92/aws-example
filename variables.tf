@@ -16,7 +16,7 @@ variable "azs" {
   default     = ["eu-central-1a", "eu-central-1b"]
 }
 
-variable "user_data_single_app" {
+variable "user_data_FE" {
   type        = string
   description = "Initialization script"
   default     = <<-EOF
@@ -27,7 +27,7 @@ variable "user_data_single_app" {
     sudo service docker start
     sudo usermod -a -G docker ec2-user
     aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin 166222693886.dkr.ecr.eu-central-1.amazonaws.com
-    docker run -p 80:3000 --rm -d public.ecr.aws/j9p4t0r0/node-example:latest
+    docker run -p 80:80 --rm -d public.ecr.aws/j9p4t0r0/upload-ui:latest
   EOF
 }
 
@@ -48,7 +48,7 @@ variable "user_data_BE" {
   EOF
 }
 
-variable "user_data_FE" {
+variable "user_data_FE_2" {
   type        = string
   description = "Initialization script"
   default     = <<-EOF

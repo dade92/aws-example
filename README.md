@@ -9,5 +9,6 @@ that can be used to pull a docker image from the private ECR.
 Moreover, it creates a mysql database that can be used by the ec2 instance to fetch data and a simple load balancer
 that forward HTTP requests to the ec2.
 
-On the instance you can deploy something like: [https://github.com/dade92/nexts-example] to have a complete
-app with FE and BE, connected to a mysql database, all inside the AWS cluster.
+On the instance you can deploy something like: [https://github.com/dade92/aws-upload-ui] for the FE part and [https://github.com/dade92/spring-example2] for the BE part.
+
+It also provisions a route 53 record attached to a public domain, davidebotti.com.
