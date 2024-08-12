@@ -1,5 +1,3 @@
-#If you want to deploy a single app, just use the security_fe security group. You can maintain the security_be
-
 resource "aws_security_group" "security_fe" {
   name        = "fe-security-group"
   description = "allow access for FE apps on port 80"

@@ -1,6 +1,3 @@
-#TODO once I will have a proper docker image I can remove the associate_public_ip_address flag
-#If you want to deploy single app, just use server_FE, changing the user_data properly
-
 resource "aws_instance" "server_BE" {
   ami                         = "ami-09e647bf7a368e505"
   instance_type               = "t2.micro"

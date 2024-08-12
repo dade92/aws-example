@@ -1,5 +1,13 @@
 # AWS EXAMPLE
 
+As a product engineers we are always focus on building new features using programming languages and
+other frameworks, sometimes forgetting about the whole picture, in which cloud and product technologies
+are equally important.
+This project is a personal POC that aims to be a comprehensive guide for the deployment
+of a digital product, focusing on the most neglected part by us (product engineers), the platform.
+
+## Detailed Description
+
 This is a terraform POC that provisions different useful resources in a AWS cluster.
 
 It provisions a VPC with 2 public subnets and 2 private subnets, an ec2 micro instance (free tier eligible)

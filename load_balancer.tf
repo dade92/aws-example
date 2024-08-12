@@ -1,5 +1,3 @@
-#If you want to deploy single app, just use the fe_tg and remove/comment the tg_attachment_be
-
 resource "aws_lb" "my_alb" {
   name               = "app-load-balancer"
   internal           = false
