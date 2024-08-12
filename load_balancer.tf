@@ -20,7 +20,7 @@ resource "aws_lb_target_group" "be_tg" {
 
   health_check {
     port = 8080
-    path = "/api/translations/en"
+    path = "/api/alive"
   }
 }
 
