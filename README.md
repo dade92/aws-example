@@ -20,3 +20,7 @@ that forward HTTP requests to the ec2.
 On the instance you can deploy something like: [https://github.com/dade92/aws-upload-ui] for the FE part and [https://github.com/dade92/spring-example2] for the BE part.
 
 It also provisions a route 53 record attached to a public domain, davidebotti.com.
+
+Here the architecture:
+
+![Alt text](architecture.png)
