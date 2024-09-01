@@ -56,6 +56,21 @@ resource "aws_iam_role_policy" "ec2_policy" {
       "Resource": [
         "arn:aws:s3:::*"
       ]
+    },
+    {
+      "Action": [
+          "dynamodb:PutItem",
+          "dynamodb:GetItem",
+          "dynamodb:Query",
+          "dynamodb:Scan",
+          "dynamodb:Delete*",
+          "dynamodb:Update*"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+          "arn:aws:dynamodb:*:*:table/Customer",
+          "arn:aws:dynamodb:*:*:table/Customer/index/*"
+      ]
     }
   ]
 }
